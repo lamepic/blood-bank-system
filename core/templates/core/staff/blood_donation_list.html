@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Blood Bank | Blood Donations {% endblock %}
+
+{% block content %}
+    <div class="container" style="min-height: 33em;">
+        <h2 class="mt-3">Blood Donations</h2>
+        <hr>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Donate Date</th>
+                    <th>Blood Status</th>
+                    <th>Expire Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for donation in object_list %}
+                
+                    <tr>
+                        <td>{{ donation.id }}</td>
+                        <td>{{donation.donate_date }}</td>
+                        {% if donation.expire_status %}
+                            <td>{{ Expired }}</td>
+                        {% else %}
+                            <td>Not Expired</td>
+                        {% endif %}
+                        <td>{{ donation.expire_date }}</td>
+                    </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}

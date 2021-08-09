@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Blood Bank | History {% endblock %}
+
+{% block content %}
+    <div class="container" style="min-height: 33em;">
+        <h2 class="mt-3">Donation History</h2>
+        <hr>
+
+        {% if donate_history %}
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Blood Volume</th>
+                    <th scope="col">Donate Date</th>
+                    <th scope="col">Blood Type</th>
+                    {% comment %} <th scope="col">Blood Status</th> {% endcomment %}
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    {% for blood_donation in donate_history %}
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>{{ blood_donation.blood_volume }}</td>
+                    <td>{{ blood_donation.donate_date }}</td>
+                    <td>{{ blood_donation.blood_type }}</td>
+                    {% comment %} <td>blood_donation</td> {% endcomment %}
+                    </tr>
+                    {% endfor %}
+                
+                </tbody>
+            </table>
+        {% else %}
+            <h3 class="text-center">You haven't made any donations yet</h3>
+        {% endif %}
+    </div>
+{% endblock %}

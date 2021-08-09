@@ -1,0 +1,67 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Blood Bank | Profile {% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="profile-head mt-5">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <h3 class="nav-link active">Profile</h3>
+            </li>
+        </ul>
+    </div>
+
+    <div class="profile-table mt-4">
+        <table class="table table-bordered table-striped">
+            <tbody>
+              <tr>
+                <th scope="row">Donor No.</th>
+                <td>{{ user.id }}</td>
+              </tr>
+              <tr>
+                <th scope="row">First Name</th>
+                <td>{{ user.first_name }}</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">Last Name</th>
+                <td>{{ user.last_name }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Email</th>
+                <td>{{ user.email }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Age</th>
+                <td>{{ user.userprofile.age }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Address</th>
+                <td>{{ user.userprofile.address }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Gender</th>
+                {% if user.userprofile.gender == 'F' %}
+                    <td>Female</td>
+                {% else %}
+                    <td>Male</td>
+                {% endif %}
+              </tr>
+              <tr>
+                <th scope="row">Contact No.</th>
+                <td>{{ user.userprofile.phone }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Blood Type</th>
+                <td>{{ user.userprofile.blood_group }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <a href="{% url 'accounts:user_profile_edit' %}" class="btn btn-danger mb-3">Edit profile</a>
+    </div>
+</div>
+
+{% endblock %}

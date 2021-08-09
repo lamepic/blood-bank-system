@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Blood Bank | Blood Request {% endblock %}
+
+{% block content %}
+    <div class="container" style="min-height: 33em;">
+        <div class="d-flex justify-content-between mt-3">
+            <h2>Pending Request</h2>
+            <div>
+                <a href="{% url 'core:create_request' %}" class="btn btn-primary" type="button">Create Request</a>
+            </div>
+        </div>
+
+        <hr>
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Blood Type</th>
+                    <th>H Name</th>
+                    <th>Blood Quantity</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for request in pending_requests %}
+                    <tr>
+                        <td>{{ request.id }}</td>
+                        <td>{{ request.blood_type }}</td>
+                        <td>{{ request.hospital.name }}</td>
+                        <td>{{ request.request_amount }}</td>
+                        <td>{{ request.withdraw_date }}</td>
+                        {% if request.status == 'P' %}
+                            <td>Pending</td>
+                        {% elif request.status == 'C' %}
+                            <td>Approved</td>
+                        {% endif %}
+                        <td><a href="{% url 'core:bloodrequest_detail' request.id %}" class="text-primary">View</a></td>
+                        <td class="table-icon">
+                            <a href="{% url 'core:delete_request' request.id %}" class="text-primary"><i class="icofont-bin"></i></a>
+                            <a href="" class="text-primary"><i class="icofont-edit"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

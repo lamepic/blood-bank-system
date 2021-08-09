@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Blood Bank | Appointments{% endblock %}
+
+{% block content %}
+            <div class="container" style="min-height: 33em;">
+                <div class="d-flex justify-content-between mt-3">
+                    <h3>Appointments</h3>
+                    <a href="{% url 'core:appointment' %}" class="btn btn-danger">Add Appoinment</a>
+                </div>
+                
+                <hr>
+                {% if object_list %}
+                <div class="d-flex flex-wrap">
+                    {% for app in object_list %}
+                        <div class="card mr-2 mb-2" style="width: 20rem;">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ app.donate_date }}</h3>
+                                <p class="card-text">{{ user.first_name }} you have an appointment at the blood bank</p>
+                                <p class="card-text">Location: Asafo </p>
+                                <a href="{% url 'core:delete_appointment' app.pk %}" class="btn btn-warning">Cancel</a>
+                            </div>
+                        </div>
+                        <br>
+                    {% endfor %}
+                </div> 
+                {% else %}
+                        <h2>No Appointments</h2>
+                {% endif %}
+                
+                <br>
+            </div>
+{% endblock %}

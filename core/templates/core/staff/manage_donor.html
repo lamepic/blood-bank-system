@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Blood Bank | Donor List{% endblock %}
+
+{% block content %}
+    <div class="container" style="min-height: 33em;">
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <h2>Donors</h2>
+            </div>
+            <div class="col-md-6">
+                <h4 class="text-right"><a href="{% url 'core:create_donor' %}" class="btn btn-primary">
+                    <i class="icofont-plus"></i> Create Donor</a>
+                </h4>
+            </div>
+        </div>
+        <hr>
+
+        <table class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Info</th>
+                    <th>option</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}010{{ user.id }}</td>
+                        <td>{{ user.first_name }} {{ user.last_name }}</td>
+                        <td><a href="{% url 'core:donor_detail' user.id %}" class="text-primary">View</a></td>
+                        <td><a href="{% url 'core:create_donation' user.id %}" class="text-primary">Create</a></td>
+                        <td class="table-icon">
+                            <a href="{% url 'core:delete_donor' user.id %}" class="text-primary"><i class="icofont-bin"></i></a>
+                            <a href="{% url 'core:edit_donor' user.id %}" class="text-primary"><i class="icofont-edit"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

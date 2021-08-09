@@ -1,0 +1,64 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Accounts | Create Donor{% endblock %}
+
+{% block content %}
+    <div class="container mt-3">
+        <h2> Create Donor </h2>
+        <hr>
+        <div class="form-group mt-3">
+            <form action="" method="POST" novalidate>
+                {% csrf_token %}
+                <div class="box">
+                    <div class="form-row">       
+                        <div class="form-group col-md-4 mb-0">         
+                            {{ user_form.first_name|as_crispy_field }}       
+                        </div> 
+                        <div class="form-group col-md-4 mb-0">         
+                            {{ user_form.last_name|as_crispy_field }}       
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4 mb-0">         
+                            {{ profile_form.phone|as_crispy_field }}       
+                        </div>
+                        <div class="form-group col-md-4 mb-0">         
+                            {{ profile_form.address|as_crispy_field }}       
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3 mb-0">         
+                            {{ profile_form.gender|as_crispy_field }}       
+                        </div>
+                        <div class="form-group col-md-2 mb-0">         
+                            {{ profile_form.age|as_crispy_field }}       
+                        </div> 
+                        <div class="form-group col-md-3 mb-0">         
+                            {{ profile_form.blood_group|as_crispy_field }}       
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>Generate Username and Password</h3>
+                    <div class="form-group">
+                        <div class="form-group col-md-4">         
+                            {{ user_form.username|as_crispy_field }}       
+                        </div>
+                        <div class="form-group col-md-4">         
+                            {{ user_form.email|as_crispy_field }}       
+                        </div>
+                        <div class="form-group col-md-4">         
+                            {{ user_form.password1|as_crispy_field }}       
+                        </div> 
+                        <div class="form-group col-md-4">         
+                            {{ user_form.password2|as_crispy_field }}       
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary mt-2" value="Create">
+                <a type="button" class="btn btn-primary mt-2" href="{% url 'core:manage_donor' %}">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,242 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Blood Bank | Learn More{% endblock %}
+
+{% block content %}
+<div class="container mt-3" style="min-height: 33em;">
+    <h3>Types of Donation</h3>
+    <hr>
+    <p>
+        There are many ways you can make a difference and save lives. Our team members will help identify which type of
+        donation is best for you,
+        based on your blood type and the immediate need for blood or blood products.
+    </p>
+    <hr>
+    <div>
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Whole Blood
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">Whole blood is the most common type of donation.</li>
+                            <li class="list-group-item">Blood from one donation can be divided into two components: red
+                                blood cells and plasma.</li>
+                            <li class="list-group-item">The average adult has about 10 pints of blood, but a typical
+                                whole-blood donation is only 1 pint.</li>
+                            <li class="list-group-item">Red blood cells have a short shelf life. They only last for 6
+                                weeks (42 days).</li>
+                            <li class="list-group-item">Donating whole blood takes only about 10-15 minutes.</li>
+                            <li class="list-group-item">You can donate whole blood every 56 days—and we encourage you to
+                                donate as often as possible.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Double Red Cell
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Red blood cells are the most commonly transfused blood component.
+                        </li>
+                        <li class="list-group-item">Donors are hooked up to a machine that collects the red cells and
+                            returns most of the plasma and platelets to the body.</li>
+                        <li class="list-group-item">Donations from type O donors are crucial to maintaining blood levels
+                            in the body.</li>
+                        <li class="list-group-item">Double red-cell donors with type O, O-negative, B or B-negative
+                            types, as well as donors with Rh-negative blood are in short supply.</li>
+                        <li class="list-group-item">You must meet higher hemoglobin and height-to-weight requirements to
+                            donate double red cells.</li>
+                        <li class="list-group-item">Double red cell donations take approximately 40 minutes.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Donating for yourself (Autologous Donation)
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Donating blood for your own elective surgery requires that an order
+                            from
+                            your doctor be faxed to the Blood</li>
+                        <li class="list-group-item">Your most recent donation must have been made at least 5 days before
+                            your
+                            scheduled procedure.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Donating for Someone ELse (Directed Donation)
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Friends and family members can donate blood for their loved ones.
+                        </li>
+                        <li class="list-group-item">Directed donations should be scheduled no later than 7 business days
+                            before the patient's blood transfusion.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h3>Blood Types</h3>
+    <p>It's important to know your blood type—whether you're a donor or a patient in need of blood products. You may be
+        surprised to learn how many people will benefit from your generous gift, no matter what type you have.
+        See how common or rare various types of blood are in the U.S. Whatever your blood type, we encourage you to
+        donate.
+    </p>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Blood Type</th>
+                <th>Percentage Population</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>O</td>
+                <td>37%</td>
+            </tr>
+            <tr>
+                <td>O-</td>
+                <td>6%</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>34%</td>
+            </tr>
+            <tr>
+                <td>A-</td>
+                <td>6%</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>B-</td>
+                <td>2%</td>
+            </tr>
+            <tr>
+                <td>AB</td>
+                <td>4%</td>
+            </tr>
+            <tr>
+                <td>AB-</td>
+                <td>1%</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h3>Plasma & Platelet</h3>
+    <p>When it comes to blood components, compatibility is the opposite of whole blood. 
+        Donors with Type AB blood are the universal donors of platelets and plasma.
+    </p>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Blood Type</th>
+                <th>Can Donate Red Blood Cells To</th>
+                <th>Can Receive Red BLood Cells From</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>O</td>
+                <td>O, O-</td>
+                <td>Everyone</td>
+            </tr>
+            <tr>
+                <td>O-</td>
+                <td>O, O-</td>
+                <td>Everyone</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>A, A-, O, O-</td>
+                <td>A, A-, AB, AB-</td>
+            </tr>
+            <tr>
+                <td>A-</td>
+                <td>A, A-, O, O-</td>
+                <td>A, A-, AB, AB-</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>B, B-, O, O-</td>
+                <td>B, B-, AB, AB-</td>
+            </tr>
+            <tr>
+                <td>B-</td>
+                <td>B, B-, O, O-</td>
+                <td>B, B-, AB, AB-</td>
+            </tr>
+            <tr>
+                <td>AB</td>
+                <td>Everyone</td>
+                <td>AB, AB-</td>
+            </tr>
+            <tr>
+                <td>AB</td>
+                <td>Everyone</td>
+                <td>AB, AB-</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h3>Why Your Donation Matters</h3>
+    <p>There are no substitutes for blood, platelets or plasma—they cannot be manufactured. Patients in need of blood or blood products must rely on donations from people like you. 
+        Those who are hesitant about donating blood for the first time often find that the donation process is easy and that saving lives is deeply gratifying.
+    </p>
+    <br>
+    <p>One donation can save multiple lives. Here are the facts:</p>
+    <ul class="list-group">
+        <li class="list-group-item">Just 1 donation can save up to 3 lives.</li>
+        <li class="list-group-item">The average red blood cell transfusion is 3 pints (or 3 whole-blood donations).</li>
+        <li class="list-group-item">More than 1 million people every year are diagnosed with cancer for the first time. Many of them will need blood—sometimes daily—during chemotherapy.</li>
+        <li class="list-group-item">More than 38,000 blood donations are needed every day.</li>
+        <li class="list-group-item">Type O-negative whole blood can be transfused to people with any blood type, but this type of blood is rare, and supplies of it are low.</li>
+        <li class="list-group-item">Type AB plasma can be transfused to patients with all other blood types, but it's also in short supply.</li>
+        <li class="list-group-item">While 38% of the American population is eligible to give blood, only 2% actually donates.</li>
+    </ul>
+    <br>
+</div>
+{% endblock %}

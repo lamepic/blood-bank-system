@@ -1,0 +1,67 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Blood Bank | Dashboard{% endblock %}
+
+{% block content %}
+    
+       <!-- ======= option-menu Section ======= -->
+       <div class="container dashboard-container" style="min-height: 33em;">
+        <section id="option-menu" class="option-menu">
+            <div class="container">
+              <h3>Dashboard</h3>
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+                  <div class="icon-box">
+                    <div class="icon"><i class="icofont-heart-alt"></i></div>
+                    <h1><a href="{% url 'core:appointment' %}">Donate</a></h1>
+                    <p>Click here to get started with the donation process. Fill out the form provided</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                  <div class="icon-box">
+                    <div class="icon"><i class="icofont-inbox"></i></div>
+                    <h1><a href="{% url 'core:learn_more' %}">Learn More...</a></h1>
+                    <p>Click here to learn about blood and blood donation process. Learn Facts and the importance of donating blood.</p>
+                  </div>
+                </div>
+                </div>
+            </div>
+            </section>
+
+            <section class="donation-history">
+                <h2>Donation History</h2>
+                {% if blood_donations %}
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Blood Volume</th>
+                        <th scope="col">Donate Date</th>
+                        <th scope="col">Blood Type</th>
+                        {% comment %} <th scope="col">Blood Status</th> {% endcomment %}
+                      </tr>
+                    </thead>
+                    <tbody>
+                    
+                      {% for blood_donation in blood_donations %}
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>{{ blood_donation.blood_volume }}</td>
+                        <td>{{ blood_donation.donate_date }}</td>
+                        <td>{{ blood_donation.blood_type }}</td>
+                        {% comment %} <td>blood_donation</td> {% endcomment %}
+                      </tr>
+                      {% endfor %}
+                    
+                    </tbody>
+                  </table>
+                  {% else %}
+                    <h3 class="text-center">You haven't made any donations yet</h3>
+                  {% endif %}
+
+            </section>
+        </div>
+{% endblock %}

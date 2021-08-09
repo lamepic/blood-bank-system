@@ -1,0 +1,67 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Blood Bank | Pending Donations {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="mt-3">Hospital Info</h2>
+            <div>
+                <a href="{% url 'core:hospital_edit' hospital.pk %}" class="btn btn-danger">Edit</a>
+            </div>
+        </div>
+        <hr>
+
+        <table class="table table-bordered table-striped">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td>{{ hospital.name }}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{ hospital.address }}</td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td>{{ hospital.phone }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ hospital.email }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="mt-5">
+            <h2>Request</h2>
+            <hr>
+
+            <h5>Number of Blood Requested: {{ hospital.bloodrequests.count }}</h5>
+            <br>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Blood Type</th>
+                        <th>Amount</th>
+                        <th>Withdraw Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if requested_blood %}
+                        {% for blood_request in requested_blood %}
+                            <tr>
+                                <td>{{ blood_request.id }}</td>
+                                <td>{{ blood_request.blood_type }}</td>
+                                <td>{{ blood_request.request_amount }}</td>
+                                <td>{{ blood_request.withdraw_date }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
